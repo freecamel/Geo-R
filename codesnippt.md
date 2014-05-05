@@ -3,13 +3,10 @@ library(plotGoogleMaps)
 library(RColorBrewer)
 vignette('plotGoogleMaps-intro')
 
-coordinates(data) <- ~artist.longitude
-+ artist.latitude
-coordinates(data) <- ~artist.longitude
-+ artist.latitude
+coordinates(data) <- ~artist.longitude + artist.latitude
+coordinates(data) <- ~artist.longitude + artist.latitude
 
-proj4string(data) <-
-+ CRS("+init=epsg:4326")
+proj4string(data) <- CRS("+init=epsg:4326")
 
 m <- bubbleGoogleMaps(data,
 zcol='sa.hf', filename = 'map.html',
